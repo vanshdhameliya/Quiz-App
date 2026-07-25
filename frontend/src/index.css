@@ -1,0 +1,62 @@
+:root {
+  /* Color tokens -- "systems console" palette */
+  --color-bg: #0f141a;          /* near-black slate, terminal background */
+  --color-surface: #182129;     /* card / panel surface */
+  --color-surface-2: #101820;   /* inputs, recessed panels */
+  --color-text: #e7ecf2;        /* console text */
+  --color-text-muted: #7e8c9a;
+  --color-accent: #4c8dff;      /* signal blue -- primary actions, links */
+  --color-accent-ink: #071022;
+  --color-good: #4ade9c;        /* correct answers / success */
+  --color-bad: #ff5c7c;         /* incorrect / destructive actions */
+  --color-border: #26323c;
+
+  /* Type tokens */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em 0;
+}
+
+a {
+  color: inherit;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
