@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Public-facing endpoints used by quiz takers. Correct answers are never
- * exposed here — only {@link AdminController} returns them.
- */
 @RestController
 @RequestMapping("/api/quizzes")
 public class QuizController {
@@ -40,4 +36,10 @@ public class QuizController {
     public ResultDTO submitAnswers(@PathVariable Long id, @RequestBody AnswerSubmissionDTO submission) {
         return quizService.evaluate(id, submission);
     }
+
+    @GetMapping("/{name}/play")
+    public QuizPublicDTO getQuizForPlayName(@PathVariable Long id) {
+        return quizService.getQuizForPlay(id);
+    }
+
 }
